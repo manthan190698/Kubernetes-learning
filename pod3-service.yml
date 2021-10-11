@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworld-service
+spec:
+  ports:
+  - port: 31001 #port number of service
+    nodePort: 31002 #port number of kubernetes cluster
+    targetPort: nodejs-port #same as mentioned in pod3.yml
+    protocol: TCP
+  selector:
+    app: helloworld #app name mentioned in pod3.yml
+  type: NodePort
+    
+  
